@@ -1,8 +1,8 @@
 
 function updateClock() {
   currentTime = new Date();
-  hours = currentTime.getHours();
-  minutes = currentTime.getMinutes();
+  hours = currentTime.getHours().toString().padStart(2, '0');
+  minutes = currentTime.getMinutes().toString().padStart(2, '0');
   seconds = currentTime.getSeconds().toString().padStart(2, '0');
 
   console.log(`Current time: ${hours}:${minutes}:${seconds}`);
