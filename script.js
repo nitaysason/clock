@@ -3,7 +3,7 @@ function updateClock() {
   currentTime = new Date();
   hours = currentTime.getHours();
   minutes = currentTime.getMinutes();
-  seconds = currentTime.getSeconds();
+  seconds = currentTime.getSeconds().toString().padStart(2, '0');
 
   console.log(`Current time: ${hours}:${minutes}:${seconds}`);
 
