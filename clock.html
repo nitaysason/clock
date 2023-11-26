@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+
+        .digital-clock {
+            font-size: 5em;
+            display: flex;
+        }
+
+    </style>
+</head>
+
+<body>
+
+  <div> <a href="index.html" class="index">index</a></div>
+ 
+    
+
+    <div id="time" class="digital-clock">
+        <div id="hou"></div>
+        <div id="min"></div>
+        <div id="sec"></div>
+    </div>
+
+    <script>
+
+
+        function updateClockhou() {
+            currentTime = new Date();
+            hours = currentTime.getHours().toString().padStart(2, '0');
+            totaltime = `${hours}:`;
+            hou.textContent = totaltime;
+        }
+        setInterval(updateClockhou, 1000);
+        let i = 0
+
+        function cng_colorhou() {
+            i = Math.floor(Math.random() * 255)
+            mycolor = `rgb(${i * 20 % 255}, ${i * 6 % 255}, ${i * 15 % 255})`
+            hou.style.color = mycolor
+        }
+        setInterval(cng_colorhou, 300);
+
+
+
+        function updateClockmin() {
+            currentTime = new Date();
+            minutes = currentTime.getMinutes().toString().padStart(2, '0');
+            totaltimemin = `${minutes}:`;
+            min.textContent = totaltimemin;
+        }
+        setInterval(updateClockmin, 1000);
+
+
+        let j = 0
+        function cng_colormin() {
+            j = Math.floor(Math.random() * 255)
+            mycolor = `rgb(${j * 75 % 255}, ${j * 36 % 255}, ${j * 2 % 255})`
+            min.style.color = mycolor
+
+        }
+        setInterval(cng_colormin, 300);
+
+
+        function updateClocksec() {
+            currentTime = new Date();
+            seconds = currentTime.getSeconds().toString().padStart(2, '0');
+            totaltimesec = `${seconds}`;
+            sec.textContent = totaltimesec;
+        }
+        setInterval(updateClocksec, 1000);
+
+        let k = 0
+        function cng_colorsec() {
+            k = Math.floor(Math.random() * 255)
+            mycolor = `rgb(${k * 20 % 255}, ${k * 30 % 255}, ${k * 30 % 255})`
+            sec.style.color = mycolor
+        }
+        setInterval(cng_colorsec, 300);
+
+    </script>
+
+
+</body>
+
+</html>
